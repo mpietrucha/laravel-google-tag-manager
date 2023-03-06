@@ -4,7 +4,7 @@ namespace Mpietrucha\GoogleTagManager\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response;
 use Mpietrucha\GoogleTagManager\Facade\GoogleTagManager;
 
 class GoogleTagManagerMiddleware
