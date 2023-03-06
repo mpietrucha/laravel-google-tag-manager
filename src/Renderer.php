@@ -14,7 +14,7 @@ class Renderer
 
     public function render(string $view): self
     {
-        $this->view = config('googletagmanager.viewKey').'::'.$view;
+        $this->view = config('google-tag-manager.viewKey').'::'.$view;
 
         return $this;
     }

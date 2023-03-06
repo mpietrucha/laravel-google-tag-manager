@@ -11,7 +11,7 @@ class GoogleTagManagerMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        $sessionKey = config('googletagmanager.sessionKey');
+        $sessionKey = config('google-tag-manager.sessionKey');
 
         if (session()->has($sessionKey)) {
             GoogleTagManager::set(session($sessionKey));

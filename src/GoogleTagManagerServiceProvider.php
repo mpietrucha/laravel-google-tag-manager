@@ -11,13 +11,13 @@ class GoogleTagManagerServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../config/googletagmanager.php' => config_path('googletagmanager.php'),
+            __DIR__.'/../config/google-tag-manager.php' => config_path('google-tag-manager.php'),
         ], 'config');
 
-        $this->loadViewsFrom(__DIR__.'/../views', config('googletagmanager.viewKey'));
+        $this->loadViewsFrom(__DIR__.'/../views', config('google-tag-manager.viewKey'));
 
         $this->publishes([
-            __DIR__.'/../views' => resource_path('views/vendor/googletagmanager')
+            __DIR__.'/../views' => resource_path('views/vendor/google-tag-manager')
         ], 'views');
 
         Blade::directive('googleTagManagerHead', function (string $expression) {
@@ -31,13 +31,13 @@ class GoogleTagManagerServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'./../config/googletagmanager.php', 'googletagmanager');
+        $this->mergeConfigFrom(__DIR__.'./../config/google-tag-manager.php', 'google-tag-manager');
 
         $this->app->bind(GoogleTagManager::class, fn () => GoogleTagManager::create(
-            config('googletagmanager.id'), config('googletagmanager.enabled')
+            config('google-tag-manager.id'), config('google-tag-manager.enabled')
         ));
 
-        if (File::exists($macros = config('googletagmanager.mixins'))) {
+        if (File::exists($macros = config('google-tag-manager.mixins'))) {
             File::requireOnce($macros);
         }
     }

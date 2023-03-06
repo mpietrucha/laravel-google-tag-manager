@@ -7,7 +7,7 @@ return [
 
     'sessionKey' => env('GOOGLE_TAG_MANAGER_SESSION_KEY', '_googleTagManager'),
 
-    'viewKey' => env('GOOGLE_TAG_MANAGER_VIEW_KEY', 'googletagmanager'),
+    'viewKey' => env('GOOGLE_TAG_MANAGER_VIEW_KEY', 'google-tag-manager'),
 
     'macros' => env('GOOGLE_TAG_MANAGER_MACRO_PATH'),
 ];
