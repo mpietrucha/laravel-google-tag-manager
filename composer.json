@@ -1,5 +1,5 @@
 {
-    "name": "mpietrucha/laravel-googletagmanager",
+    "name": "mpietrucha/laravel-google-tag-manager",
     "description": "Google Tag Manager integration for Laravel with CSP support.",
     "type": "liblary",
     "license": "MIT",
